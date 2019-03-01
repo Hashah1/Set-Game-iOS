@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet var cardButtonCollection: [UIButton]!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Hide all the cards
+        for index in cardButtonCollection.indices {
+            cardButtonCollection[index].isHidden = true
+        }
+        // Place the start button in the center of screen
+        startButton.frame.origin = CGPoint(x: 150, y: 350)
+        
+        // Hide the score label
+        scoreLabel.isHidden = true
     }
-
-
 }
 
